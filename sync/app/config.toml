@@ -1,0 +1,33 @@
+[app]
+chain = ["btc","eth"]
+empty_interval = 5000 #miliSecond
+error_interval = 5000
+
+# level: PanicLevel=0, FatalLevel=1, ErrorLevel=2, WarnLevel=3, InfoLevel=4, DebugLevel=5
+[log]
+    [log.stdout]
+    enable = true
+    level = 5
+
+    [log.file]
+    enable = true
+    level = 5
+    path ="./logs/sync.log"
+
+[producer.btc]
+url = "https://maximum-restless-river.btc.quiknode.pro/bcf68d1b628602a9ad4b25f8e1b6cebcc3c686c2"
+timeout = 15_000
+user = ""
+password = ""
+
+[producer.eth]
+url = "https://rpc.ankr.com/eth_goerli/8b4a7aff54ac22cd3d15d0e58b3ba1a6ee3f90b2233cba73bd7093dbcfe885dd"
+timeout = 15_000
+user = ""
+password = ""
+
+[consumer.btc]
+start_height = 813467
+
+[consumer.eth]
+start_height = 9917460
